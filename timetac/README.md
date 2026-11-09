@@ -5,7 +5,7 @@ Kleines Python-CLI (nur Standardbibliothek) für die TimeTac REST API v3.
 ## Einrichtung
 
 ```bash
-export TIMETAC_ACCOUNT=<account>          # wie in https://go.timetac.com/<account>
+# TIMETAC_ACCOUNT ist standardmäßig cadsgmbh (https://go.timetac.com/cadsgmbh)
 export TIMETAC_TOKEN=<oauth2-access-token>
 ```
 

@@ -10,7 +10,7 @@ Commands:
   tt today              list today's time trackings with a total
 
 Configuration (environment variables):
-  TIMETAC_ACCOUNT       account name, as in https://go.timetac.com/<account>  (required)
+  TIMETAC_ACCOUNT       account name, as in https://go.timetac.com/<account>  (default: cadsgmbh)
   TIMETAC_TOKEN         OAuth2 access token                                    (option A)
   TIMETAC_CLIENT_ID     OAuth2 client id                                       (option B)
   TIMETAC_CLIENT_SECRET OAuth2 client secret                                   (option B)
@@ -41,7 +41,7 @@ def env(name, default=None, required=False):
 
 class TimeTac:
     def __init__(self):
-        self.account = env("TIMETAC_ACCOUNT", required=True)
+        self.account = env("TIMETAC_ACCOUNT", "cadsgmbh")
         self.base = env("TIMETAC_API_BASE", f"https://api.timetac.com/{self.account}/userapi/v3").rstrip("/")
         self.token = env("TIMETAC_TOKEN") or self._password_grant()
         self._me = None
